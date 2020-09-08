@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
 import './App.css';
 
+
+import {userContext} from "./Component/Hook/userContext";
+
+import Form from "./Component/FormHook/Form";
+import CurrencyConventer from"./Component/Currency/CurrencyConverter"
+
 function App() {
-  return (
+    const [state,setState]=useState("Shit happens sometime, but gone soon")
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {/*<userContext.Provider value={{state,setState}}>*/}
+            <CurrencyConventer/>
+        {/*</userContext.Provider>*/}
     </div>
   );
 }
